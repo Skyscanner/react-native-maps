@@ -47,6 +47,10 @@ android {
   }
 }
 
+afterEvaluate {
+  install.dependsOn rootProject.tasks.npmInstall
+}
+
 dependencies {
   def googlePlayServicesVersion = safeExtGet('googlePlayServicesVersion', DEFAULT_GOOGLE_PLAY_SERVICES_VERSION)
   // Variable lookup order : googlePlayServicesMapsVersion > googlePlayServicesVersion > DEFAULT_GOOGLE_PLAY_SERVICES_MAPS_VERSION
