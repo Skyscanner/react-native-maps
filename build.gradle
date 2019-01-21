@@ -30,3 +30,13 @@ task clean(type: Delete) {
 task npmInstall(type: Exec) {
   commandLine './npmInstall.sh'
 }
+
+//before {
+//  afterEvaluate {
+//    install.dependsOn rootProject.tasks.npmInstall
+//  }
+//}
+
+gradle.taskGraph.whenReady {
+  npmInstall.execute()
+}
