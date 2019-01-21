@@ -1,5 +1,8 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
 apply from: 'gradle-maven-push.gradle'
+
+group='com.github.Skyscanner'
 
 def DEFAULT_COMPILE_SDK_VERSION               = 27
 def DEFAULT_BUILD_TOOLS_VERSION               = "27.0.3"
