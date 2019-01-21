@@ -26,17 +26,3 @@ allprojects {
 task clean(type: Delete) {
   delete rootProject.buildDir
 }
-
-task npmInstall(type: Exec) {
-  commandLine './npmInstall.sh'
-}
-
-//before {
-//  afterEvaluate {
-//    install.dependsOn rootProject.tasks.npmInstall
-//  }
-//}
-
-gradle.taskGraph.whenReady {
-  npmInstall.execute()
-}
